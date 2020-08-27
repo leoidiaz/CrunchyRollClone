@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,9 @@
 		2981206724F5C4B5002F9F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981206524F5C4B5002F9F58 /* LaunchScreen.storyboard */; };
 		2981207724F5D624002F9F58 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981207624F5D624002F9F58 /* WelcomeViewController.swift */; };
 		2981207924F5D925002F9F58 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981207824F5D925002F9F58 /* AuthViewController.swift */; };
+		299C1CDC24F85B9200FBC6AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299C1CDB24F85B9200FBC6AD /* GoogleService-Info.plist */; };
 		29A12C7E24F72079000EC4CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A12C7D24F72079000EC4CF /* User.swift */; };
+		84D79316171D5D1B3FBED71A /* Pods_crunchyroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,11 @@
 		2981206824F5C4B5002F9F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2981207624F5D624002F9F58 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2981207824F5D925002F9F58 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		299C1CDB24F85B9200FBC6AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29A12C7D24F72079000EC4CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		48D2FD8EFC093EFB2A55638F /* Pods-crunchyroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crunchyroll.release.xcconfig"; path = "Target Support Files/Pods-crunchyroll/Pods-crunchyroll.release.xcconfig"; sourceTree = "<group>"; };
+		ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crunchyroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C99A491860DCA3E2727B8F5D /* Pods-crunchyroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crunchyroll.debug.xcconfig"; path = "Target Support Files/Pods-crunchyroll/Pods-crunchyroll.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D79316171D5D1B3FBED71A /* Pods_crunchyroll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AFCF90286EA718AFC1B0157 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C99A491860DCA3E2727B8F5D /* Pods-crunchyroll.debug.xcconfig */,
+				48D2FD8EFC093EFB2A55638F /* Pods-crunchyroll.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2981204E24F5C4B3002F9F58 = {
 			isa = PBXGroup;
 			children = (
 				2981205924F5C4B3002F9F58 /* crunchyroll */,
 				2981205824F5C4B3002F9F58 /* Products */,
+				1AFCF90286EA718AFC1B0157 /* Pods */,
+				2B845E4A3D87E3F0015CB1A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +94,7 @@
 				2981205A24F5C4B3002F9F58 /* AppDelegate.swift */,
 				2981205C24F5C4B4002F9F58 /* SceneDelegate.swift */,
 				2981206324F5C4B5002F9F58 /* Assets.xcassets */,
+				299C1CDB24F85B9200FBC6AD /* GoogleService-Info.plist */,
 				2981206824F5C4B5002F9F58 /* Info.plist */,
 			);
 			path = Resources;
@@ -137,6 +156,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2B845E4A3D87E3F0015CB1A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2981206B24F5C4B5002F9F58 /* Build configuration list for PBXNativeTarget "crunchyroll" */;
 			buildPhases = (
+				C9119D0D38C13BC8FDB7820D /* [CP] Check Pods Manifest.lock */,
 				2981205324F5C4B3002F9F58 /* Sources */,
 				2981205424F5C4B3002F9F58 /* Frameworks */,
 				2981205524F5C4B3002F9F58 /* Resources */,
+				4DA64C4D2E0C9135855DE2C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,12 +225,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				2981206724F5C4B5002F9F58 /* LaunchScreen.storyboard in Resources */,
+				299C1CDC24F85B9200FBC6AD /* GoogleService-Info.plist in Resources */,
 				2981206424F5C4B5002F9F58 /* Assets.xcassets in Resources */,
 				2981206224F5C4B4002F9F58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DA64C4D2E0C9135855DE2C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9119D0D38C13BC8FDB7820D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-crunchyroll-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2981205324F5C4B3002F9F58 /* Sources */ = {
@@ -354,6 +426,7 @@
 		};
 		2981206C24F5C4B5002F9F58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C99A491860DCA3E2727B8F5D /* Pods-crunchyroll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -371,6 +444,7 @@
 		};
 		2981206D24F5C4B5002F9F58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48D2FD8EFC093EFB2A55638F /* Pods-crunchyroll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
