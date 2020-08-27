@@ -59,4 +59,38 @@ class AuthViewController: UIViewController {
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true)
     }
+    
+    @IBAction func loginCreateButtonTapped(_ sender: Any) {
+        guard let email = emailTextField.text, !email.isEmpty else { return }
+        guard let password = passwordTextField.text, !password.isEmpty else { return }
+        
+        if isLogin {
+            
+            UserController.shared.signInUser(email: email, password: password) { (success) in
+                if success {
+                    self.showMain()
+                } else {
+                    return print("Error signing in.")
+                }
+            }
+        } else {
+            UserController.shared.createAuthUser(email: email, password: password) { (success) in
+                if success {
+                    self.showMain()
+                } else {
+                    return print("Error signing in.")
+                }
+            }
+        }
+    }
+    
+    private func showMain(){
+        let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "homeVC")
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window {
+            dismiss(animated: true) {
+                window.rootViewController = homeViewController
+            }
+        }
+    }
+    
 }

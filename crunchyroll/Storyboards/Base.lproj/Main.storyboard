@@ -139,6 +139,9 @@
                                 <state key="normal" title="LOG IN / CREATE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginCreateButtonTapped:" destination="ms3-3h-aDW" eventType="touchUpInside" id="q7U-sR-qv5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDl-y1-D3j">
                                 <rect key="frame" x="128.33333333333334" y="51.333333333333336" width="118.66666666666666" height="20.333333333333336"/>
@@ -184,6 +187,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GbX-KG-RXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1908" y="102.70935960591133"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="W7j-l6-BG9">
+            <objects>
+                <viewController id="XIr-ia-yLp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g5Y-Kd-lrh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is8-A9-ICE">
+                                <rect key="frame" x="145.66666666666666" y="395.66666666666669" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="is8-A9-ICE" firstAttribute="centerX" secondItem="g5Y-Kd-lrh" secondAttribute="centerX" id="791-fV-rkD"/>
+                            <constraint firstItem="is8-A9-ICE" firstAttribute="centerY" secondItem="g5Y-Kd-lrh" secondAttribute="centerY" id="f9e-Iw-kJ7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1xz-rB-BQc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Cn9-21-kAY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKS-Yi-qXG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908" y="793"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Hvh-d6-e6O">
+            <objects>
+                <tabBarController storyboardIdentifier="homeVC" automaticallyAdjustsScrollViewInsets="NO" id="nUg-IJ-XbV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M7H-DM-6I3">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XIr-ia-yLp" kind="relationship" relationship="viewControllers" id="eUg-yK-Cuy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJd-7R-twZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="793"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

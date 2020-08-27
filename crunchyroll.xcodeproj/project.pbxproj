@@ -15,6 +15,7 @@
 		2981207724F5D624002F9F58 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981207624F5D624002F9F58 /* WelcomeViewController.swift */; };
 		2981207924F5D925002F9F58 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981207824F5D925002F9F58 /* AuthViewController.swift */; };
 		299C1CDC24F85B9200FBC6AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299C1CDB24F85B9200FBC6AD /* GoogleService-Info.plist */; };
+		299C1CDE24F8646700FBC6AD /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C1CDD24F8646700FBC6AD /* UserController.swift */; };
 		29A12C7E24F72079000EC4CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A12C7D24F72079000EC4CF /* User.swift */; };
 		84D79316171D5D1B3FBED71A /* Pods_crunchyroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		2981207624F5D624002F9F58 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2981207824F5D925002F9F58 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		299C1CDB24F85B9200FBC6AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		299C1CDD24F8646700FBC6AD /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		29A12C7D24F72079000EC4CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		48D2FD8EFC093EFB2A55638F /* Pods-crunchyroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crunchyroll.release.xcconfig"; path = "Target Support Files/Pods-crunchyroll/Pods-crunchyroll.release.xcconfig"; sourceTree = "<group>"; };
 		ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crunchyroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 		2981207324F5D5DE002F9F58 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				299C1CDD24F8646700FBC6AD /* UserController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299C1CDE24F8646700FBC6AD /* UserController.swift in Sources */,
 				2981207924F5D925002F9F58 /* AuthViewController.swift in Sources */,
 				2981207724F5D624002F9F58 /* WelcomeViewController.swift in Sources */,
 				2981205B24F5C4B4002F9F58 /* AppDelegate.swift in Sources */,
