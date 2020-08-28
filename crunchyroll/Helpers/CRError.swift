@@ -7,3 +7,26 @@
 //
 
 import Foundation
+
+enum CRError: LocalizedError {
+    case invalidURL
+    case thrownError(Error)
+    case noData
+    case noNetwork
+    case emptyTextField
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "Unable to reach server."
+        case .thrownError(let error):
+            return error.localizedDescription
+        case .noData:
+            return "The server responded with no data."
+        case .emptyTextField:
+            return "You can't add an empty textfield."
+        case .noNetwork:
+            return "Please check your network connection."
+        }
+    }
+}
