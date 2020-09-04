@@ -19,7 +19,7 @@ class HomeCollectionViewController: UICollectionViewController {
     
     //MARK: - Properties
     private let reuseIdentifier = "homeCells"
-    
+    private let segueIdentifier = "toDetailVC"
     var animes = [Anime]()
 
     func setupView(){
@@ -36,15 +36,15 @@ class HomeCollectionViewController: UICollectionViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == segueIdentifier {
+            guard let indexPath = collectionView.indexPathsForSelectedItems?.first, let destinationVC = segue.destination as? DetailsViewController else { presentErrorToUser(title: "Unable to Segue", localizedError: .noNetwork) ; return }
+            let anime = animes[indexPath.row]
+            destinationVC.anime = anime
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
