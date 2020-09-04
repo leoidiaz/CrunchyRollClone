@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2926F5D325019DED006E13F7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2926F5D225019DED006E13F7 /* DetailsViewController.swift */; };
 		2958887B24F9777E0078BF5D /* CRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958887A24F9777E0078BF5D /* CRError.swift */; };
 		2958887D24F977E20078BF5D /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958887C24F977E20078BF5D /* ViewControllerExtension.swift */; };
 		2958887F24F97E040078BF5D /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958887E24F97E040078BF5D /* HomeCollectionViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2926F5D225019DED006E13F7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2958887A24F9777E0078BF5D /* CRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRError.swift; sourceTree = "<group>"; };
 		2958887C24F977E20078BF5D /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		2958887E24F97E040078BF5D /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				2981207624F5D624002F9F58 /* WelcomeViewController.swift */,
 				2981207824F5D925002F9F58 /* AuthViewController.swift */,
 				2958887E24F97E040078BF5D /* HomeCollectionViewController.swift */,
+				2926F5D225019DED006E13F7 /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				2981205B24F5C4B4002F9F58 /* AppDelegate.swift in Sources */,
 				29A12C7E24F72079000EC4CF /* User.swift in Sources */,
 				2981205D24F5C4B4002F9F58 /* SceneDelegate.swift in Sources */,
+				2926F5D325019DED006E13F7 /* DetailsViewController.swift in Sources */,
 				2958888524F98C150078BF5D /* Anime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
