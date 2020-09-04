@@ -23,7 +23,7 @@ class HomeCollectionViewController: UICollectionViewController {
     var animes = [Anime]()
 
     func setupView(){
-        AnimeController.fetchAnimes(searchType: .trending, query: nil) { [weak self] (result) in
+        AnimeController.fetchAnimes(searchType: .trending, query: nil, idURL: nil) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let animes):
