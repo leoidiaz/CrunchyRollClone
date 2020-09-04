@@ -26,4 +26,5 @@ class Attributes: Decodable {
 
 class PosterImage: Decodable {
     let medium: String
+    let large: String
 }
