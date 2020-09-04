@@ -35,6 +35,10 @@ class WelcomeViewController: UIViewController {
         createAccountButton.layer.borderColor = UIColor.white.cgColor
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
