@@ -18,6 +18,7 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var accountButton: UIButton!
     
     @IBOutlet weak var loginCreateButton: UIButton!
+    @IBOutlet weak var accountLabel: UILabel!
     
     //MARK: - Properties
     var isLogin: Bool!
@@ -35,7 +36,9 @@ class AuthViewController: UIViewController {
         loginCreateButton.layer.borderColor = UIColor.white.cgColor
         if isLogin {
             loginCreateButton.setTitle("LOG IN", for: .normal)
+            accountLabel.text = "Log In"
         } else {
+            accountLabel.text = "Create Account"
             loginCreateButton.setTitle("CREATE ACCOUNT", for: .normal)
             forgotPassword.isHidden = true
             dividerLabel.text = "Already have an account? "
