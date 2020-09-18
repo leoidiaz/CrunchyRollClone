@@ -18,6 +18,8 @@ class AnimeController {
     static private let baseURL = URL(string: "https://kitsu.io/api/edge")
     static private let trendingKey = "trending"
     static private let subKey = "anime"
+    //https://kitsu.io/api/edge/anime?filter[text]=demon%20slayer
+    static private let queryKey = "filter[text]"
     
     static func fetchAnimes(searchType: AnimeFetchType, query: String?, idURL: String?, completion: @escaping(Result<[Anime],CRError>) -> Void) {
         guard let baseURL = baseURL else { return completion(.failure(.invalidURL)) }
@@ -51,7 +53,39 @@ class AnimeController {
                 
             }.resume()
         case .query:
-            print("Query")
+            let animeURL = baseURL.appendingPathComponent(subKey)
+            var components = URLComponents(url: animeURL, resolvingAgainstBaseURL: true)
+            let searchQuery = URLQueryItem(name: queryKey, value: query)
+            // page query
+            components?.queryItems = [searchQuery]
+            guard let finalURL = components?.url else { return completion(.failure(.invalidURL))}
+            print(finalURL)
+            URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+                if let error = error {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    completion(.failure(.thrownError(error)))
+                }
+
+                guard let data = data else { return completion(.failure(.noData))}
+                do {
+                    let anime = try JSONDecoder().decode(TopLevelObject.self, from: data)
+                
+                    var animes = [Anime]()
+                    
+                    for anime in anime.data {
+                        animes.append(anime)
+                    }
+                    
+                    return completion(.success(animes))
+                    
+                } catch {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    return completion(.failure(.thrownError(error)))
+                }
+                
+            }.resume()
+            
+            
         case .myList:
             guard let urlString = idURL else { return completion(.failure(.noData))}
             guard let finalURL = URL(string: urlString) else { return completion(.failure(.invalidURL))}
