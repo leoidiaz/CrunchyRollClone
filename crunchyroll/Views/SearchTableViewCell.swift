@@ -9,16 +9,34 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
+    //MARK: - Outlets
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var moreInfoButton: UIButton!
+    //MARK: - Properties
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var anime: Anime? {
+        didSet{
+            setupCell()
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    //MARK: - Helper Methods
+    private func setupCell(){
+        guard let anime = anime else { return }
+        titleLabel.text = anime.attributes.canonicalTitle
+        typeLabel.text = anime.attributes.subtype
+        posterImageView.image = nil
+        AnimeController.fetchPoster(posterPath: anime.attributes.posterImage.medium) { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let poster):
+                    self?.posterImageView.image = poster
+                case .failure(let error):
+                    return print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                }
+            }
+        }
     }
-
 }
