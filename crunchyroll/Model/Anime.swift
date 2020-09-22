@@ -12,6 +12,10 @@ class TopLevelObject: Decodable {
     let data: [Anime]
 }
 
+class MyListLevelObject: Decodable {
+    let data: Anime
+}
+
 class Anime: Decodable {
     let id: String
     let attributes: Attributes
