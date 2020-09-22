@@ -69,17 +69,17 @@ class AuthViewController: UIViewController {
         
         if isLogin {
             
-            UserController.shared.signInUser(email: email, password: password) { (success) in
+            UserController.shared.signInUser(email: email, password: password) { [weak self] (success) in
                 if success {
-                    self.showMain()
+                    self?.showMain()
                 } else {
                     return print("Error signing in.")
                 }
             }
         } else {
-            UserController.shared.createAuthUser(email: email, password: password) { (success) in
+            UserController.shared.createAuthUser(email: email, password: password) { [weak self] (success) in
                 if success {
-                    self.showMain()
+                    self?.showMain()
                 } else {
                     return print("Error signing in.")
                 }
