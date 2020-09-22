@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailsViewController: UIViewController {
     //MARK: - Outlets
@@ -24,6 +25,7 @@ class DetailsViewController: UIViewController {
     //MARK: - Properties
     var anime: Anime?
     var timer: Timer?
+    var animeID: String!
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ class DetailsViewController: UIViewController {
     
     private func setup(){
         guard let anime = anime else { return }
+        animeID = anime.id
         bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
         bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
         titleLabel.text = anime.attributes.canonicalTitle
@@ -82,7 +85,6 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func bookmarkButtonTapped(_ sender: Any) {
-//        if anime.id is in list then show filled else show un filled
         timer?.invalidate()
         
         bookmarkLabelChange(isHidden: false, constant: 10.0)
@@ -92,6 +94,7 @@ class DetailsViewController: UIViewController {
             bookmarkButton.isSelected = false
             bookMarkStatusLabel.text = "Removed from watchlist"
         } else {
+            UserController.shared.addToList(animeID: animeID)
             bookmarkButton.isSelected = true
             bookMarkStatusLabel.text = "Added to Watchlist"
         }
