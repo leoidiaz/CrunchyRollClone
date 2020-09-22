@@ -25,7 +25,7 @@ class DetailsViewController: UIViewController {
     //MARK: - Properties
     var anime: Anime?
     var timer: Timer?
-    var animeID: String!
+    var animeID: String?
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +86,7 @@ class DetailsViewController: UIViewController {
     
     @IBAction func bookmarkButtonTapped(_ sender: Any) {
         timer?.invalidate()
-        
+        guard let animeID = animeID else { return }
         bookmarkLabelChange(isHidden: false, constant: 10.0)
         bookmarkButton.backgroundColor = .black
 
