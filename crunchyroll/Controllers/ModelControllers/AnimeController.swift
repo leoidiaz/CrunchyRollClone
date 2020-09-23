@@ -11,7 +11,6 @@ import UIKit.UIImage
 enum AnimeFetchType {
     case trending
     case query
-    case myList
 }
 
 class AnimeController {
@@ -84,38 +83,34 @@ class AnimeController {
                 }
                 
             }.resume()
-            
-            
-        case .myList:
-            guard let urlString = idURL else { return completion(.failure(.noData))}
-            guard let finalURL = URL(string: urlString) else { return completion(.failure(.invalidURL))}
-            
-            URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
-                if let error = error {
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                    completion(.failure(.thrownError(error)))
-                }
-
-                guard let data = data else { return completion(.failure(.noData))}
-                do {
-                    let anime = try JSONDecoder().decode(TopLevelObject.self, from: data)
-                
-                    var animes = [Anime]()
-                    
-                    for anime in anime.data {
-                        animes.append(anime)
-                    }
-                    
-                    return completion(.success(animes))
-                    
-                } catch {
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                    return completion(.failure(.thrownError(error)))
-                }
-                
-            }.resume()
         }
     }
+    
+    static func fetchMyListAnime(idURL: String?, completion: @escaping(Result<Anime, CRError>) -> Void) {
+        guard let baseURL = baseURL else { return completion(.failure(.invalidURL)) }
+        guard let idKey = idURL else { return completion(.failure(.noData))}
+        let subtype = baseURL.appendingPathComponent(subKey)
+        let finalURL = subtype.appendingPathComponent(idKey)
+        
+        URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(.failure(.thrownError(error)))
+            }
+
+            guard let data = data else { return completion(.failure(.noData))}
+            do {
+                let topLevel = try JSONDecoder().decode(MyListLevelObject.self, from: data)
+                let anime = topLevel.data
+                return completion(.success(anime))
+            } catch {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                return completion(.failure(.thrownError(error)))
+            }
+            
+        }.resume()
+    }
+    
     
     static func fetchPoster(posterPath: String, completion: @escaping(Result<UIImage, CRError>) -> Void){
         guard let posterURL = URL(string: posterPath) else { return completion(.failure(.invalidURL))}
