@@ -210,6 +210,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="889-ty-qTx" kind="presentation" identifier="detailsFromMyListVC" id="ITw-66-6aa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -646,7 +649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fE-Gv-9rg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3088.8000000000002" y="869.70443349753702"/>
+            <point key="canvasLocation" x="3089" y="1598"/>
         </scene>
         <!--My Lists-->
         <scene sceneID="NSs-RZ-YEY">
@@ -688,7 +691,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VUS-wp-lX1"/>
+        <segue reference="ITw-66-6aa"/>
         <segue reference="5Pg-Ft-dod"/>
     </inferredMetricsTieBreakers>
     <resources>
