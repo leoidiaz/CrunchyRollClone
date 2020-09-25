@@ -26,6 +26,7 @@ class DetailsViewController: UIViewController {
     var anime: Anime?
     var timer: Timer?
     var animeID: String?
+    var myList: [String]?
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,9 @@ class DetailsViewController: UIViewController {
     
     private func setup(){
         guard let anime = anime else { return }
+        guard let mylist = myList else { return }
         animeID = anime.id
+        if mylist.contains(anime.id){ bookmarkButton.isSelected = true}
         bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
         bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
         titleLabel.text = anime.attributes.canonicalTitle
@@ -69,7 +72,7 @@ class DetailsViewController: UIViewController {
     }
     
     private func setTimer(){
-        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [weak self] (_) in
+        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { [weak self] (_) in
             self?.bookmarkLabelChange()
         })
     }
@@ -91,6 +94,7 @@ class DetailsViewController: UIViewController {
         bookmarkButton.backgroundColor = .black
 
         if bookmarkButton.isSelected {
+            UserController.shared.removeFromList(animeID: animeID)
             bookmarkButton.isSelected = false
             bookMarkStatusLabel.text = "Removed from watchlist"
         } else {
