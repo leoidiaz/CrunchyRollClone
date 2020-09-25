@@ -19,12 +19,6 @@ class User: Codable {
     init(myList: [String] = []) {
         self.myList = myList
     }
-    
-    init?(userDictionary: [String: Any]) {
-        guard let myLists = userDictionary[UserKeys.myLists] as? [String] else { fatalError("Can not find documents")}
-        self.myList = myLists
-    }
-    
 }
 
 extension User {
