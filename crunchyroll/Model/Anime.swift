@@ -26,9 +26,14 @@ class Attributes: Decodable {
     let subtype: String
     let description: String
     let posterImage: PosterImage
+    let coverImage: CoverImage?
 }
 
 class PosterImage: Decodable {
     let medium: String
     let large: String
+}
+
+class CoverImage: Decodable {
+    let tiny: String?
 }
