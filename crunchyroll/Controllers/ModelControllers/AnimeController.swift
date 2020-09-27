@@ -19,8 +19,12 @@ class AnimeController {
     static private let subKey = "anime"
     //https://kitsu.io/api/edge/anime?filter[text]=demon%20slayer
     static private let queryKey = "filter[text]"
+    //https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=12062
+//    static private let limitKey = "page[limit]"
+//    static private let offSetKey = "page[offset]"
+//    static private let offSetValue = String(Int.random(in: 0...12062))
     
-    static func fetchAnimes(searchType: AnimeFetchType, query: String?, idURL: String?, completion: @escaping(Result<[Anime],CRError>) -> Void) {
+    static func fetchAnimes(searchType: AnimeFetchType, query: String?, completion: @escaping(Result<[Anime],CRError>) -> Void) {
         guard let baseURL = baseURL else { return completion(.failure(.invalidURL)) }
         
         switch searchType {
