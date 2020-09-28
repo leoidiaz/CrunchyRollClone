@@ -12,15 +12,14 @@ class MyListsTableViewController: UITableViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    override func viewWillAppear(_ animated: Bool) {
         fetchMyList()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchMyList), name: Notification.Name(notificationName), object: nil)
     }
     
     //MARK: - Properties
     private let reuseIdentifier = "myListCells"
     private let segueIdentifier = "detailsFromMyListVC"
-    
+    private let notificationName = "refreshList"
     var animes = [Anime]() {
         didSet{
             if animes.count == UserController.shared.mylist.count {
@@ -36,7 +35,7 @@ class MyListsTableViewController: UITableViewController {
         guard !UserController.shared.mylist.isEmpty else { return }
         for animeURL in UserController.shared.mylist {
             AnimeController.fetchMyListAnime(idURL: animeURL) { [weak self] (result) in
-                DispatchQueue.main.sync {
+                DispatchQueue.main.async {
                     switch result {
                     case .success(let anime):
                         self?.animes.append(anime)
@@ -66,7 +65,6 @@ class MyListsTableViewController: UITableViewController {
         if segue.identifier == segueIdentifier {
             guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? DetailsViewController else { presentErrorToUser(title: "Unable to Segue", localizedError: .noNetwork) ; return }
             let anime = animes[indexPath.row]
-            destinationVC.myList = UserController.shared.mylist
             destinationVC.anime = anime
             tableView.deselectRow(at: indexPath, animated: false)
         }
