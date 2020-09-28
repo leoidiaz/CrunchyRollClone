@@ -15,7 +15,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var resultsLabel: UILabel!
     
     var animes = [Anime]()
-    var myList: [String]?
     private let reuseID = "searchedAnime"
     private let segueIdentifier = "detailsFromSearchVC"
     //MARK: - Lifecycle
@@ -55,7 +54,6 @@ class SearchViewController: UIViewController {
             guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? DetailsViewController else { presentErrorToUser(title: "Unable to Segue", localizedError: .noNetwork) ; return }
             let anime = animes[indexPath.row]
             destinationVC.anime = anime
-            destinationVC.myList = myList
             tableView.deselectRow(at: indexPath, animated: false)
         }
     }
