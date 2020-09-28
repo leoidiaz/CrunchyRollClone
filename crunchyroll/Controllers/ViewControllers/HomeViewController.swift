@@ -9,22 +9,98 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    //MARK: - Outlets
+    @IBOutlet weak var trendingCollectionView: UICollectionView!
+    @IBOutlet weak var coverImageCollectionView: UICollectionView!
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
+        fetchAnimes()
+        retrieveMyList()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Properties
+    private let reuseIdentifier = "homeCells"
+    private let coverAnimeIdentifier = "coverAnimeCell"
+    private let searchViewIdentifier = "toSearchVC"
+    private let segueIdentifier = "toDetailVC"
+    private var coverImageAnimes = [Anime]()
+    private var animes = [Anime]()
+    private var mylist = [String]()
+    
+    private func setupView(){
+        trendingCollectionView.delegate = self
+        trendingCollectionView.dataSource = self
+        coverImageCollectionView.delegate = self
+        coverImageCollectionView.dataSource = self
+        coverImageCollectionView.isPagingEnabled = true
     }
-    */
+    
+    private func fetchAnimes(){
+        AnimeController.fetchAnimes(searchType: .trending, query: nil) { [weak self] (result) in
+            DispatchQueue.main.sync {
+                switch result {
+                case .success(let animes):
+                    self?.animes = animes
+                    self?.trendingCollectionView.reloadData()
+                    self?.coverImageCollectionView.reloadData()
+                case .failure(let error):
+                    self?.presentErrorToUser(title: "Unable to retrieve Trending Animes", localizedError: .thrownError(error))
+                }
+            }
+        }
+    }
+    
+    private func retrieveMyList(){
+        UserController.shared.fetchMyList { [weak self] (result) in
+            switch result {
+            case .success(_):
+                self?.mylist = UserController.shared.mylist
+            case .failure(let error):
+                self?.presentErrorToUser(title: "Unable to retrieve my list", localizedError: .thrownError(error))
+            }
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            guard let indexPath = trendingCollectionView.indexPathsForSelectedItems?.first, let destinationVC = segue.destination as? DetailsViewController else { presentErrorToUser(title: "Unable to Segue", localizedError: .noNetwork) ; return }
+            let anime = animes[indexPath.row]
+            destinationVC.myList = mylist
+            destinationVC.anime = anime
+        }
+        
+        if segue.identifier == searchViewIdentifier {
+            guard let destinationVC = segue.destination as? SearchViewController else { presentErrorToUser(title: "Unable to segue to search view", localizedError: .noNetwork); return}
+            destinationVC.myList = mylist
+        }
+    }
+    
+}
 
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    // MARK: UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return animes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == trendingCollectionView{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TrendingCollectionViewCell else { return UICollectionViewCell()}
+            let anime = animes[indexPath.row]
+            cell.anime = anime
+            return cell
+        }
+        if collectionView == coverImageCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: coverAnimeIdentifier, for: indexPath) as? CoverCollectionViewCell else { return UICollectionViewCell()}
+            let anime = animes[indexPath.row]
+            cell.anime = anime
+            return cell
+        }
+        return UICollectionViewCell()
+    }
 }
