@@ -44,13 +44,13 @@ class UserController {
         }
     }
     
-    func fetchMyList(completion: @escaping (Result<User, CRError>) -> Void){
+    func fetchMyList(completion: @escaping (Result<Bool, CRError>) -> Void){
         guard let userEmail = Auth.auth().currentUser?.email else {fatalError("Could not fetch current user")}
         db.collection(UserKeys.documentKey).document(userEmail).addSnapshotListener { [weak self] (querySnapshot, error) in
             guard let document = querySnapshot else {return completion(.failure(.noData))}
             guard let user = try? document.data(as: User.self) else { return completion(.failure(.noData))}
             self?.mylist = user.myList
-            completion(.success(user))
+            completion(.success(true))
         }
     }
     
