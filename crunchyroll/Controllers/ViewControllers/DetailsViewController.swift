@@ -27,6 +27,7 @@ class DetailsViewController: UIViewController {
     var timer: Timer?
     var animeID: String?
     var myList: [String]?
+    private let notificationName = "refreshList"
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +103,7 @@ class DetailsViewController: UIViewController {
             bookmarkButton.isSelected = true
             bookMarkStatusLabel.text = "Added to Watchlist"
         }
+        NotificationCenter.default.post(name: Notification.Name(notificationName), object: nil)
         setTimer()
     }
     @IBAction func onBookMarkTouch(_ sender: Any) {
