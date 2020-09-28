@@ -26,7 +26,6 @@ class DetailsViewController: UIViewController {
     var anime: Anime?
     var timer: Timer?
     var animeID: String?
-    var myList: [String]?
     private let notificationName = "refreshList"
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -41,9 +40,8 @@ class DetailsViewController: UIViewController {
     
     private func setup(){
         guard let anime = anime else { return }
-        guard let mylist = myList else { return }
         animeID = anime.id
-        if mylist.contains(anime.id){ bookmarkButton.isSelected = true}
+        if UserController.shared.mylist.contains(anime.id){ bookmarkButton.isSelected = true}
         bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
         bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
         titleLabel.text = anime.attributes.canonicalTitle
