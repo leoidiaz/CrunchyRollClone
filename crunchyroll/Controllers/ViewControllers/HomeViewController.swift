@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
     private let segueIdentifier = "toDetailVC"
     private var coverImageAnimes = [Anime]()
     private var animes = [Anime]()
-    private var mylist = [String]()
     
     private func setupView(){
         trendingCollectionView.delegate = self
@@ -56,7 +55,7 @@ class HomeViewController: UIViewController {
         UserController.shared.fetchMyList { [weak self] (result) in
             switch result {
             case .success(_):
-                self?.mylist = UserController.shared.mylist
+                return
             case .failure(let error):
                 self?.presentErrorToUser(title: "Unable to retrieve my list", localizedError: .thrownError(error))
             }
@@ -69,16 +68,9 @@ class HomeViewController: UIViewController {
         if segue.identifier == segueIdentifier {
             guard let indexPath = trendingCollectionView.indexPathsForSelectedItems?.first, let destinationVC = segue.destination as? DetailsViewController else { presentErrorToUser(title: "Unable to Segue", localizedError: .noNetwork) ; return }
             let anime = animes[indexPath.row]
-            destinationVC.myList = mylist
             destinationVC.anime = anime
         }
-        
-        if segue.identifier == searchViewIdentifier {
-            guard let destinationVC = segue.destination as? SearchViewController else { presentErrorToUser(title: "Unable to segue to search view", localizedError: .noNetwork); return}
-            destinationVC.myList = mylist
-        }
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
