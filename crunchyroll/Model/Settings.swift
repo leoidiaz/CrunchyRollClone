@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Settings {
+    static let defaultSetings = [["Change Email", "Change Password"], ["Log Out"]]
+}
