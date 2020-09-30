@@ -28,7 +28,7 @@ class SearchViewController: UIViewController {
     }
     //MARK: - Helper Methods
     private func fetchAnime(anime: String){
-        AnimeController.fetchAnimes(searchType: .query, query: anime) { [weak self] (result) in
+        AnimeController.getAnimes(searchType: .query, query: anime) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let animes):

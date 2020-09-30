@@ -34,7 +34,7 @@ class MyListsTableViewController: UITableViewController {
         animes.removeAll()
         guard !UserController.shared.mylist.isEmpty else { return }
         for animeURL in UserController.shared.mylist {
-            AnimeController.fetchMyListAnime(idURL: animeURL) { [weak self] (result) in
+            AnimeController.getMyListAnime(idURL: animeURL) { [weak self] (result) in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let anime):

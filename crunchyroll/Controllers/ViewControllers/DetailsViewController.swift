@@ -52,7 +52,7 @@ class DetailsViewController: UIViewController {
     }
     
     private func fetchPoster(anime: Anime){
-        AnimeController.fetchPoster(posterPath: anime.attributes.posterImage.large) { [weak self] (result) in
+        AnimeController.getPoster(posterPath: anime.attributes.posterImage.large) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let poster):

@@ -37,8 +37,8 @@ class HomeViewController: UIViewController {
     }
     
     private func fetchAnimes(){
-        AnimeController.fetchAnimes(searchType: .trending, query: nil) { [weak self] (result) in
-            DispatchQueue.main.sync {
+        AnimeController.getAnimes(searchType: .trending, query: nil){ [weak self] (result) in
+            DispatchQueue.main.async {
                 switch result {
                 case .success(let animes):
                     self?.animes = animes
