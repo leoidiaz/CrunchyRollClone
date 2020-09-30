@@ -23,7 +23,7 @@ class CoverCollectionViewCell: UICollectionViewCell {
         coverImageView.layer.cornerRadius = 5
         guard let anime = anime else { return }
         guard let animeCover = anime.attributes.coverImage, let tinyCover = animeCover.tiny else { return }
-        AnimeController.fetchPoster(posterPath: tinyCover) { [weak self] (result) in
+        AnimeController.getPoster(posterPath: tinyCover) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let poster):

@@ -28,7 +28,7 @@ class SearchTableViewCell: UITableViewCell {
         titleLabel.text = anime.attributes.canonicalTitle
         typeLabel.text = anime.attributes.subtype
         posterImageView.image = nil
-        AnimeController.fetchPoster(posterPath: anime.attributes.posterImage.medium) { [weak self] (result) in
+        AnimeController.getPoster(posterPath: anime.attributes.posterImage.medium) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let poster):
