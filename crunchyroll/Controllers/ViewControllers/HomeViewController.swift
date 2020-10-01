@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     private var animes = [Anime]()
     
     private func setupView(){
+        navigationItem.leftBarButtonItem = UIBarButtonItem.logoButton(self, imageName: "Crunchyroll-Logo2")
         trendingCollectionView.delegate = self
         trendingCollectionView.dataSource = self
         coverImageCollectionView.delegate = self
