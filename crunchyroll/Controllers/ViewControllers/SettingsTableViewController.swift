@@ -13,6 +13,7 @@ class SettingsTableViewController: UITableViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
     }
     //MARK: - Properties
     var settings = Settings.defaultSetings
@@ -45,6 +46,13 @@ class SettingsTableViewController: UITableViewController {
         return nil
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+                headerView.textLabel?.textColor = .darkGray
+                headerView.tintColor = .black
+            }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath)
         cell.textLabel?.text = settings[indexPath.section][indexPath.row]
@@ -64,11 +72,6 @@ class SettingsTableViewController: UITableViewController {
     }
     
     //MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let destinationVC
-    }
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if tableView.indexPathForSelectedRow == logout { return false }
         return true
