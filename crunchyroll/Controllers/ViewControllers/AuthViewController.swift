@@ -34,6 +34,10 @@ class AuthViewController: UIViewController {
         emailTextField.becomeFirstResponder()
         loginCreateButton.layer.borderWidth = 2
         loginCreateButton.layer.borderColor = UIColor.white.cgColor
+        addPaddingAndBorder(to: emailTextField)
+        addPaddingAndBorder(to: passwordTextField)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
         if isLogin {
             loginCreateButton.setTitle("LOG IN", for: .normal)
             accountLabel.text = "Log In"
@@ -64,24 +68,28 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func loginCreateButtonTapped(_ sender: Any) {
-        guard let email = emailTextField.text, !email.isEmpty else { return }
-        guard let password = passwordTextField.text, !password.isEmpty else { return }
+        guard let email = emailTextField.text, !email.isEmpty else { presentErrorToUser(title: "Email is empty", localizedError: .emptyTextField) ; return }
+        guard let password = passwordTextField.text, !password.isEmpty else { presentErrorToUser(title: "Password is empty", localizedError: .emptyTextField) ; return }
         
         if isLogin {
             
-            UserController.shared.signInUser(email: email, password: password) { [weak self] (success) in
-                if success {
+            UserController.shared.signInUser(email: email, password: password) { [weak self] (result) in
+                switch result {
+                case .success(_):
                     self?.showMain()
-                } else {
-                    return print("Error signing in.")
+                case .failure(let error):
+                    self?.presentErrorToUser(title: "Error signing in.", localizedError: .thrownError(error))
+                    return
                 }
             }
         } else {
-            UserController.shared.createAuthUser(email: email, password: password) { [weak self] (success) in
-                if success {
+            UserController.shared.createAuthUser(email: email, password: password) { [weak self] (result) in
+                switch result {
+                case .success(_):
                     self?.showMain()
-                } else {
-                    return print("Error signing in.")
+                case .failure(let error):
+                    self?.presentErrorToUser(title: "Error Creating account.", localizedError: .thrownError(error))
+                    return
                 }
             }
         }
