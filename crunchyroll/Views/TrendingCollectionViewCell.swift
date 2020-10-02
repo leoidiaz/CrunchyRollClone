@@ -13,7 +13,6 @@ class TrendingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var moreInfoButton: UIButton!
     
     //MARK: - Properties
     var anime: Anime? {
