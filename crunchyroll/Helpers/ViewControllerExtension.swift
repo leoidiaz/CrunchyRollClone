@@ -38,3 +38,9 @@ func createGradient(frame: CGRect) -> CAGradientLayer{
     gradient.locations = [0, 0.1, 0.9, 1]
     return gradient
 }
+
+func addPaddingAndBorder(to textfield: UITextField) {
+    let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 2.0))
+    textfield.leftView = leftView
+    textfield.leftViewMode = .always
+}
