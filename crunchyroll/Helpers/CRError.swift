@@ -14,6 +14,7 @@ enum CRError: LocalizedError {
     case noData
     case noNetwork
     case emptyTextField
+    case emailDoesNotMatch
     
     var errorDescription: String? {
         switch self {
@@ -27,6 +28,8 @@ enum CRError: LocalizedError {
             return "You can't add an empty textfield."
         case .noNetwork:
             return "Please check your network connection."
+        case .emailDoesNotMatch:
+            return "Please check your Email field and make sure they match"
         }
     }
 }
