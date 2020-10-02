@@ -15,32 +15,32 @@ class UserController {
     static let shared = UserController()
     var mylist = [String]()
         
-    func createAuthUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
+    func createAuthUser(email: String, password: String, completion: @escaping (Result<Bool, CRError>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(false)
+                completion(.failure(.thrownError(error)))
             }
             guard result != nil else {
-                return completion(false)
+                return completion(.failure(.noData))
             }
             let newUser = User()
             db.collection(UserKeys.documentKey).document(email).setData(newUser.documentDictionary)
             self?.mylist = newUser.myList
-            completion(true)
+            completion(.success(true))
         }
     }
     
-    func signInUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
+    func signInUser(email: String, password: String, completion: @escaping (Result<Bool, CRError>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(false)
+                completion(.failure(.thrownError(error)))
             }
             guard result != nil else {
-                return completion(false)
+                return completion(.failure(.noData))
             }
-            completion(true)
+            completion(.success(true))
         }
     }
     
