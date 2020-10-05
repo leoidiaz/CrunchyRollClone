@@ -29,6 +29,10 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         setupView()
     }
+        
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     func setupView(){
         emailTextField.becomeFirstResponder()
