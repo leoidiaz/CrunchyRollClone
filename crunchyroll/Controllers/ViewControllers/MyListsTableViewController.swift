@@ -12,6 +12,7 @@ class MyListsTableViewController: UITableViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         fetchMyList()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchMyList), name: Notification.Name(notificationName), object: nil)
     }
@@ -23,13 +24,16 @@ class MyListsTableViewController: UITableViewController {
     var animes = [Anime]() {
         didSet{
             if animes.count == UserController.shared.mylist.count {
+                animes.sort(by: {$0.attributes.canonicalTitle < $1.attributes.canonicalTitle })
                 tableView.reloadData()
             }
         }
     }
     
     //MARK: - Helper Methods
-    
+    private func setupView(){
+        tableView.tableFooterView = UIView()
+    }
     @objc private func fetchMyList(){
         animes.removeAll()
         guard !UserController.shared.mylist.isEmpty else { return }
