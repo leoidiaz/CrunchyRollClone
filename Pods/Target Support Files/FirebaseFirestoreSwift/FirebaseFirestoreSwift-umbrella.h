@@ -10,3 +10,7 @@
 #endif
 #endif
 
+
+FOUNDATION_EXPORT double FirebaseFirestoreSwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char FirebaseFirestoreSwiftVersionString[];
+
