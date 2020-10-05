@@ -51,6 +51,20 @@ class WelcomeViewController: UIViewController {
             destinationVC.isLogin = false
         }
     }
+    
+    
+    @IBAction func buttonExit(_ sender: UIButton) {
+        sender.transform = .identity
+        sender.alpha = 1.0
+    }
+    @IBAction func buttonTouchDown(_ sender: UIButton) {
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        sender.alpha = 0.7
+    }
+    @IBAction func buttonTouchUp(_ sender: UIButton) {
+        sender.transform = .identity
+        sender.alpha = 1.0
+    }
 }
 
 extension WelcomeViewController: SegueDelegate {
@@ -61,6 +75,4 @@ extension WelcomeViewController: SegueDelegate {
     func switchToCreate() {
         performSegue(withIdentifier: createSegueID, sender: Any?.self)
     }
-    
-    
 }

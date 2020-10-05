@@ -32,7 +32,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-CD-Wve">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-CD-Wve">
                                 <rect key="frame" x="28" y="596.33333333333337" width="319" height="40.333333333333371"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
@@ -40,16 +40,22 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonExit:" destination="8Io-B3-ps2" eventType="touchDragExit" id="od3-Q7-aJQ"/>
+                                    <action selector="buttonTouchDown:" destination="8Io-B3-ps2" eventType="touchDown" id="al6-qA-MBX"/>
+                                    <action selector="buttonTouchUp:" destination="8Io-B3-ps2" eventType="touchUpInside" id="R0H-Cy-OuX"/>
                                     <segue destination="ms3-3h-aDW" kind="show" identifier="loginSegue" id="5Pg-Ft-dod"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xs-Od-g5A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xs-Od-g5A">
                                 <rect key="frame" x="28" y="646.66666666666663" width="319" height="40.666666666666629"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <state key="normal" title="CREATE ACCOUNT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonExit:" destination="8Io-B3-ps2" eventType="touchDragExit" id="1pE-mB-HFU"/>
+                                    <action selector="buttonTouchDown:" destination="8Io-B3-ps2" eventType="touchDown" id="qL9-Mb-Nd5"/>
+                                    <action selector="buttonTouchUp:" destination="8Io-B3-ps2" eventType="touchUpInside" id="urm-TK-XE6"/>
                                     <segue destination="ms3-3h-aDW" kind="show" identifier="createSegue" id="4P7-Fw-WRA"/>
                                 </connections>
                             </button>
