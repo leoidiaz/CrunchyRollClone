@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29142D1A25157D5000CB795C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29142D1925157D5000CB795C /* SearchTableViewCell.swift */; };
 		2926F5D325019DED006E13F7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2926F5D225019DED006E13F7 /* DetailsViewController.swift */; };
+		293C764A2524F40E006757DB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C76492524F40E006757DB /* NetworkService.swift */; };
+		293FB74A251E89B200B8A771 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FB749251E89B200B8A771 /* HomeViewController.swift */; };
+		293FB74D251E91C300B8A771 /* CoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FB74C251E91C300B8A771 /* CoverCollectionViewCell.swift */; };
 		2958887B24F9777E0078BF5D /* CRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958887A24F9777E0078BF5D /* CRError.swift */; };
 		2958887D24F977E20078BF5D /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958887C24F977E20078BF5D /* ViewControllerExtension.swift */; };
-		2958887F24F97E040078BF5D /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958887E24F97E040078BF5D /* HomeCollectionViewController.swift */; };
 		2958888324F98A620078BF5D /* TrendingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958888224F98A620078BF5D /* TrendingCollectionViewCell.swift */; };
 		2958888524F98C150078BF5D /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958888424F98C150078BF5D /* Anime.swift */; };
 		2958888724F9907D0078BF5D /* AnimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958888624F9907D0078BF5D /* AnimeController.swift */; };
+		29631C282512D10E00146998 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29631C272512D10E00146998 /* SearchViewController.swift */; };
 		2981205B24F5C4B4002F9F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981205A24F5C4B3002F9F58 /* AppDelegate.swift */; };
 		2981205D24F5C4B4002F9F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981205C24F5C4B4002F9F58 /* SceneDelegate.swift */; };
 		2981206224F5C4B4002F9F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981206024F5C4B4002F9F58 /* Main.storyboard */; };
@@ -21,20 +25,28 @@
 		2981206724F5C4B5002F9F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981206524F5C4B5002F9F58 /* LaunchScreen.storyboard */; };
 		2981207724F5D624002F9F58 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981207624F5D624002F9F58 /* WelcomeViewController.swift */; };
 		2981207924F5D925002F9F58 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981207824F5D925002F9F58 /* AuthViewController.swift */; };
+		2992712525226EBE00E3063D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992712425226EBE00E3063D /* SettingsTableViewController.swift */; };
+		299271282522727800E3063D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299271272522727800E3063D /* Settings.swift */; };
 		299C1CDC24F85B9200FBC6AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299C1CDB24F85B9200FBC6AD /* GoogleService-Info.plist */; };
 		299C1CDE24F8646700FBC6AD /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C1CDD24F8646700FBC6AD /* UserController.swift */; };
 		29A12C7E24F72079000EC4CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A12C7D24F72079000EC4CF /* User.swift */; };
-		84D79316171D5D1B3FBED71A /* Pods_crunchyroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */; };
+		29B0F968251A91F3009B15EA /* MyListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0F967251A91F2009B15EA /* MyListsTableViewController.swift */; };
+		29C551CF2526698500025B0A /* ModifyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C551CE2526698500025B0A /* ModifyAccountViewController.swift */; };
+		7F1878F4000189A3B6F5DC27 /* Pods_crunchyroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16DFD249DF37E4531374B9B /* Pods_crunchyroll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29142D1925157D5000CB795C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		2926F5D225019DED006E13F7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		293C76492524F40E006757DB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		293FB749251E89B200B8A771 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		293FB74C251E91C300B8A771 /* CoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		2958887A24F9777E0078BF5D /* CRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRError.swift; sourceTree = "<group>"; };
 		2958887C24F977E20078BF5D /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		2958887E24F97E040078BF5D /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		2958888224F98A620078BF5D /* TrendingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2958888424F98C150078BF5D /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
 		2958888624F9907D0078BF5D /* AnimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeController.swift; sourceTree = "<group>"; };
+		29631C272512D10E00146998 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2981205724F5C4B3002F9F58 /* crunchyroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crunchyroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981205A24F5C4B3002F9F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2981205C24F5C4B4002F9F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,12 +56,16 @@
 		2981206824F5C4B5002F9F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2981207624F5D624002F9F58 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2981207824F5D925002F9F58 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		2992712425226EBE00E3063D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		299271272522727800E3063D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		299C1CDB24F85B9200FBC6AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		299C1CDD24F8646700FBC6AD /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		29A12C7D24F72079000EC4CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		48D2FD8EFC093EFB2A55638F /* Pods-crunchyroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crunchyroll.release.xcconfig"; path = "Target Support Files/Pods-crunchyroll/Pods-crunchyroll.release.xcconfig"; sourceTree = "<group>"; };
-		ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crunchyroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C99A491860DCA3E2727B8F5D /* Pods-crunchyroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crunchyroll.debug.xcconfig"; path = "Target Support Files/Pods-crunchyroll/Pods-crunchyroll.debug.xcconfig"; sourceTree = "<group>"; };
+		29B0F967251A91F2009B15EA /* MyListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsTableViewController.swift; sourceTree = "<group>"; };
+		29C551CE2526698500025B0A /* ModifyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyAccountViewController.swift; sourceTree = "<group>"; };
+		BEDB29DED9C9E3235677DA02 /* Pods-crunchyroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crunchyroll.debug.xcconfig"; path = "Target Support Files/Pods-crunchyroll/Pods-crunchyroll.debug.xcconfig"; sourceTree = "<group>"; };
+		C72535627A3A5618385B5C86 /* Pods-crunchyroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crunchyroll.release.xcconfig"; path = "Target Support Files/Pods-crunchyroll/Pods-crunchyroll.release.xcconfig"; sourceTree = "<group>"; };
+		E16DFD249DF37E4531374B9B /* Pods_crunchyroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crunchyroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D79316171D5D1B3FBED71A /* Pods_crunchyroll.framework in Frameworks */,
+				7F1878F4000189A3B6F5DC27 /* Pods_crunchyroll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,10 +83,18 @@
 		1AFCF90286EA718AFC1B0157 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C99A491860DCA3E2727B8F5D /* Pods-crunchyroll.debug.xcconfig */,
-				48D2FD8EFC093EFB2A55638F /* Pods-crunchyroll.release.xcconfig */,
+				BEDB29DED9C9E3235677DA02 /* Pods-crunchyroll.debug.xcconfig */,
+				C72535627A3A5618385B5C86 /* Pods-crunchyroll.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		293C76482524F3F5006757DB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				293C76492524F40E006757DB /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		2981204E24F5C4B3002F9F58 = {
@@ -79,7 +103,7 @@
 				2981205924F5C4B3002F9F58 /* crunchyroll */,
 				2981205824F5C4B3002F9F58 /* Products */,
 				1AFCF90286EA718AFC1B0157 /* Pods */,
-				2B845E4A3D87E3F0015CB1A2 /* Frameworks */,
+				8CD72FFA79E2C9BA46ED3895 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +118,7 @@
 		2981205924F5C4B3002F9F58 /* crunchyroll */ = {
 			isa = PBXGroup;
 			children = (
+				293C76482524F3F5006757DB /* Network */,
 				2981207024F5C62F002F9F58 /* Model */,
 				2981207524F5D5F3002F9F58 /* Views */,
 				2981207124F5C632002F9F58 /* Controllers */,
@@ -130,6 +155,7 @@
 			children = (
 				29A12C7D24F72079000EC4CF /* User.swift */,
 				2958888424F98C150078BF5D /* Anime.swift */,
+				299271272522727800E3063D /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,8 +192,12 @@
 			children = (
 				2981207624F5D624002F9F58 /* WelcomeViewController.swift */,
 				2981207824F5D925002F9F58 /* AuthViewController.swift */,
-				2958887E24F97E040078BF5D /* HomeCollectionViewController.swift */,
 				2926F5D225019DED006E13F7 /* DetailsViewController.swift */,
+				29631C272512D10E00146998 /* SearchViewController.swift */,
+				29B0F967251A91F2009B15EA /* MyListsTableViewController.swift */,
+				293FB749251E89B200B8A771 /* HomeViewController.swift */,
+				2992712425226EBE00E3063D /* SettingsTableViewController.swift */,
+				29C551CE2526698500025B0A /* ModifyAccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,14 +206,16 @@
 			isa = PBXGroup;
 			children = (
 				2958888224F98A620078BF5D /* TrendingCollectionViewCell.swift */,
+				29142D1925157D5000CB795C /* SearchTableViewCell.swift */,
+				293FB74C251E91C300B8A771 /* CoverCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2B845E4A3D87E3F0015CB1A2 /* Frameworks */ = {
+		8CD72FFA79E2C9BA46ED3895 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ABB0B6DFEB5A1093C28181EF /* Pods_crunchyroll.framework */,
+				E16DFD249DF37E4531374B9B /* Pods_crunchyroll.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,11 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2981206B24F5C4B5002F9F58 /* Build configuration list for PBXNativeTarget "crunchyroll" */;
 			buildPhases = (
-				C9119D0D38C13BC8FDB7820D /* [CP] Check Pods Manifest.lock */,
+				0BE2F4C8011FAD0A8DD492D5 /* [CP] Check Pods Manifest.lock */,
 				2981205324F5C4B3002F9F58 /* Sources */,
 				2981205424F5C4B3002F9F58 /* Frameworks */,
 				2981205524F5C4B3002F9F58 /* Resources */,
-				4DA64C4D2E0C9135855DE2C5 /* [CP] Embed Pods Frameworks */,
+				CFD2604FA737DDF47C209E76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,7 +249,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Leonardo Diaz";
 				TargetAttributes = {
 					2981205624F5C4B3002F9F58 = {
@@ -258,24 +290,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DA64C4D2E0C9135855DE2C5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9119D0D38C13BC8FDB7820D /* [CP] Check Pods Manifest.lock */ = {
+		0BE2F4C8011FAD0A8DD492D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -297,6 +312,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CFD2604FA737DDF47C209E76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crunchyroll/Pods-crunchyroll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -304,19 +336,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2958887F24F97E040078BF5D /* HomeCollectionViewController.swift in Sources */,
 				299C1CDE24F8646700FBC6AD /* UserController.swift in Sources */,
 				2958888724F9907D0078BF5D /* AnimeController.swift in Sources */,
+				293FB74A251E89B200B8A771 /* HomeViewController.swift in Sources */,
 				2981207924F5D925002F9F58 /* AuthViewController.swift in Sources */,
 				2981207724F5D624002F9F58 /* WelcomeViewController.swift in Sources */,
 				2958887B24F9777E0078BF5D /* CRError.swift in Sources */,
 				2958887D24F977E20078BF5D /* ViewControllerExtension.swift in Sources */,
 				2958888324F98A620078BF5D /* TrendingCollectionViewCell.swift in Sources */,
+				2992712525226EBE00E3063D /* SettingsTableViewController.swift in Sources */,
+				29B0F968251A91F3009B15EA /* MyListsTableViewController.swift in Sources */,
+				293C764A2524F40E006757DB /* NetworkService.swift in Sources */,
+				29C551CF2526698500025B0A /* ModifyAccountViewController.swift in Sources */,
+				29631C282512D10E00146998 /* SearchViewController.swift in Sources */,
+				29142D1A25157D5000CB795C /* SearchTableViewCell.swift in Sources */,
+				293FB74D251E91C300B8A771 /* CoverCollectionViewCell.swift in Sources */,
 				2981205B24F5C4B4002F9F58 /* AppDelegate.swift in Sources */,
 				29A12C7E24F72079000EC4CF /* User.swift in Sources */,
 				2981205D24F5C4B4002F9F58 /* SceneDelegate.swift in Sources */,
 				2926F5D325019DED006E13F7 /* DetailsViewController.swift in Sources */,
 				2958888524F98C150078BF5D /* Anime.swift in Sources */,
+				299271282522727800E3063D /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -428,6 +469,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -458,7 +500,7 @@
 		};
 		2981206C24F5C4B5002F9F58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C99A491860DCA3E2727B8F5D /* Pods-crunchyroll.debug.xcconfig */;
+			baseConfigurationReference = BEDB29DED9C9E3235677DA02 /* Pods-crunchyroll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,7 +518,7 @@
 		};
 		2981206D24F5C4B5002F9F58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48D2FD8EFC093EFB2A55638F /* Pods-crunchyroll.release.xcconfig */;
+			baseConfigurationReference = C72535627A3A5618385B5C86 /* Pods-crunchyroll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
