@@ -78,11 +78,24 @@ class DetailsViewController: UIViewController {
         })
     }
     
+    private func createURL() -> URL? {
+        guard let anime = anime else { return nil }
+        let url = URL(string: "https://kitsu.io/api/edge/anime")
+        guard var baseURL = url else { return nil }
+        baseURL.appendPathComponent(anime.id)
+        return baseURL
+    }
+    
     private func bookmarkLabelChange(isHidden: Bool = true, constant: CGFloat = .zero){
         bottomConstraint.constant = constant
         bookMarkStatusLabel.isHidden = isHidden
     }
-    
+    //MARK: - Action Outlets
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        guard let finalURL = createURL() else { return }
+        let activityController = UIActivityViewController(activityItems: [finalURL], applicationActivities: nil)
+        present(activityController, animated: true)
+    }
     @IBAction func closeButtonTapped(_ sender: Any) {
         timer?.invalidate()
         dismiss(animated: true)
