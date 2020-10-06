@@ -46,7 +46,7 @@ class AuthViewController: UIViewController {
         addPaddingAndBorder(to: emailTextField)
         addPaddingAndBorder(to: passwordTextField)
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
     }
     
     private func checkLogin(){
@@ -133,7 +133,7 @@ extension UITextField {
     func setBottomBorder() {
         borderStyle = .none
         layer.masksToBounds = false
-        layer.shadowColor = UIColor.yellow.cgColor
+        layer.shadowColor = UIColor.systemYellow.cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
         layer.shadowOpacity = 1.0
         layer.shadowRadius = 0.0
