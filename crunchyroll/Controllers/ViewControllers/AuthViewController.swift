@@ -28,13 +28,18 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        checkLogin()
     }
         
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    func setupView(){
+    private func setupView(){
+        emailTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderWidth = 1
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         emailTextField.becomeFirstResponder()
         loginCreateButton.layer.borderWidth = 2
         loginCreateButton.layer.borderColor = UIColor.white.cgColor
@@ -42,6 +47,9 @@ class AuthViewController: UIViewController {
         addPaddingAndBorder(to: passwordTextField)
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
+    }
+    
+    private func checkLogin(){
         if isLogin {
             loginCreateButton.setTitle("LOG IN", for: .normal)
             accountLabel.text = "Log In"
@@ -108,4 +116,30 @@ class AuthViewController: UIViewController {
         }
     }
     
+}
+extension AuthViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if emailTextField.isFirstResponder {
+            emailTextField.setBottomBorder()
+            passwordTextField.removeBottomBorder()
+        } else {
+            emailTextField.removeBottomBorder()
+            passwordTextField.setBottomBorder()
+        }
+    }
+}
+
+extension UITextField {
+    func setBottomBorder() {
+        borderStyle = .none
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.yellow.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        layer.shadowOpacity = 1.0
+        layer.shadowRadius = 0.0
+    }
+    func removeBottomBorder() {
+        layer.shadowColor = .none
+        layer.shadowOffset = .zero
+    }
 }
