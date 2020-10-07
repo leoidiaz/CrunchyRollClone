@@ -15,9 +15,11 @@ enum AnimeFetchType {
 
 class AnimeController {
     
+    var network = NetworkService()
+    
     //MARK: - Decoding
-    static func getAnimes(searchType: AnimeFetchType, query: String?, completion: @escaping(Result<[Anime], CRError>) -> Void) {
-        NetworkService.fetchAnimes(searchType: searchType, query: query) { (result) in
+     func getAnimes(searchType: AnimeFetchType, query: String?, completion: @escaping(Result<[Anime], CRError>) -> Void) {
+        network.fetchAnimes(searchType: searchType, query: query) { (result) in
             switch result {
             case .success(let data):
                 do {
@@ -37,8 +39,8 @@ class AnimeController {
         }
     }
     
-    static func getMyListAnime(idURL: String, completion: @escaping(Result<Anime, CRError>) -> Void) {
-        NetworkService.fetchMyListAnime(idURL: idURL) { (result) in
+     func getMyListAnime(idURL: String, completion: @escaping(Result<Anime, CRError>) -> Void) {
+        network.fetchMyListAnime(idURL: idURL) { (result) in
             switch result {
             case .success(let data):
                 do {
@@ -55,8 +57,8 @@ class AnimeController {
         }
     }
     
-    static func getPoster(posterPath: String, completion: @escaping(Result<UIImage, CRError>) -> Void) {
-        NetworkService.fetchPoster(posterPath: posterPath) { (result) in
+    func getPoster(posterPath: String, completion: @escaping(Result<UIImage, CRError>) -> Void) {
+        network.fetchPoster(posterPath: posterPath) { (result) in
             switch result{
             case .success(let data):
                 guard let poster = UIImage(data: data) else { return completion(.failure(.noData))}
