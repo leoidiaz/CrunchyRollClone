@@ -20,6 +20,7 @@ class ModifyAccountViewController: UIViewController {
     }
     
     private func setupView(){
+        currentInfo.delegate = self
         currentInfo.backgroundColor = #colorLiteral(red: 0, green: 0.299513787, blue: 0.4791773558, alpha: 1)
         addPaddingAndBorder(to: currentInfo)
         currentInfo.attributedPlaceholder = NSAttributedString(string: "Current Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans", size: 18)!])
@@ -55,5 +56,24 @@ class ModifyAccountViewController: UIViewController {
                 window.rootViewController = welcomeViewController
             }
         }
+    }
+}
+
+extension ModifyAccountViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if currentInfo.isFirstResponder {
+            currentInfo.setBottomBorder()
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        currentInfo.resignFirstResponder()
+        currentInfo.removeBottomBorder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        currentInfo.endEditing(true)
+        currentInfo.removeBottomBorder()
     }
 }
