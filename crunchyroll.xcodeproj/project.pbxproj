@@ -18,7 +18,6 @@
 		2958888524F98C150078BF5D /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958888424F98C150078BF5D /* Anime.swift */; };
 		2958888724F9907D0078BF5D /* AnimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958888624F9907D0078BF5D /* AnimeController.swift */; };
 		29631C282512D10E00146998 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29631C272512D10E00146998 /* SearchViewController.swift */; };
-		296FB0BE252E2F6400068115 /* crunchyrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0BD252E2F6400068115 /* crunchyrollTests.swift */; };
 		296FB0C8252E2FCC00068115 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */; };
 		296FB0CE252E43B000068115 /* AnimeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0CD252E43B000068115 /* AnimeControllerTests.swift */; };
 		2981205B24F5C4B4002F9F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981205A24F5C4B3002F9F58 /* AppDelegate.swift */; };
@@ -61,7 +60,6 @@
 		2958888624F9907D0078BF5D /* AnimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeController.swift; sourceTree = "<group>"; };
 		29631C272512D10E00146998 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		296FB0BB252E2F6400068115 /* crunchyrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crunchyrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		296FB0BD252E2F6400068115 /* crunchyrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crunchyrollTests.swift; sourceTree = "<group>"; };
 		296FB0BF252E2F6400068115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		296FB0CD252E43B000068115 /* AnimeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeControllerTests.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 		296FB0BC252E2F6400068115 /* crunchyrollTests */ = {
 			isa = PBXGroup;
 			children = (
-				296FB0BD252E2F6400068115 /* crunchyrollTests.swift */,
 				296FB0BF252E2F6400068115 /* Info.plist */,
 				296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */,
 				296FB0CD252E43B000068115 /* AnimeControllerTests.swift */,
@@ -406,7 +403,6 @@
 			files = (
 				296FB0C8252E2FCC00068115 /* NetworkServiceTests.swift in Sources */,
 				296FB0CE252E43B000068115 /* AnimeControllerTests.swift in Sources */,
-				296FB0BE252E2F6400068115 /* crunchyrollTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
