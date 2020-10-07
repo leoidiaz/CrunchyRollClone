@@ -11,18 +11,26 @@ Purpose of this app was to have more practice with Firebase, Networking with an 
 
 Sign in authenication with Firestore and add watchlist animes that are saved onto Firestore.
 
-## Welcome Screen / Login Screen / Create Screen
-
+<h2 align= "center"> Welcome Screen</h2>
 <p align= "center">
 <img src= "screenshots/welcomeScreen.png" width = "200">
+</p>
+
+<h2 align= "center"> Login Screen / Create Screen </h2> 
+<p align= "center">
 <img src= "screenshots/login.png" width = "200">
 <img src= "screenshots/createAccount.png" width = "200">
 </p>
 
-## Home Screen / My Lists Screen / Search Screen
+<h2 align= "center">Home Screen / Details Screen </h2>
 
 <p align= "center">
 <img src= "screenshots/homeScreen.png" width = "200">
+<img src= "screenshots/detailsScreen.png" width = "200">
+</p>
+
+<h2 align="center"> My Lists Screen / Search Screen </h2>
+<p align= "center">
 <img src= "screenshots/myListsScreen.png" width = "200">
 <img src= "screenshots/searchScreen.png" width = "200">
 </p>
