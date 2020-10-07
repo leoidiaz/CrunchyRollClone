@@ -20,6 +20,7 @@
 		29631C282512D10E00146998 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29631C272512D10E00146998 /* SearchViewController.swift */; };
 		296FB0C8252E2FCC00068115 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */; };
 		296FB0CE252E43B000068115 /* AnimeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0CD252E43B000068115 /* AnimeControllerTests.swift */; };
+		296FB0D4252E854A00068115 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0D3252E854A00068115 /* ResetPasswordViewController.swift */; };
 		2981205B24F5C4B4002F9F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981205A24F5C4B3002F9F58 /* AppDelegate.swift */; };
 		2981205D24F5C4B4002F9F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981205C24F5C4B4002F9F58 /* SceneDelegate.swift */; };
 		2981206224F5C4B4002F9F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981206024F5C4B4002F9F58 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		296FB0BF252E2F6400068115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		296FB0CD252E43B000068115 /* AnimeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeControllerTests.swift; sourceTree = "<group>"; };
+		296FB0D3252E854A00068115 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		2981205724F5C4B3002F9F58 /* crunchyroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crunchyroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981205A24F5C4B3002F9F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2981205C24F5C4B4002F9F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				293FB749251E89B200B8A771 /* HomeViewController.swift */,
 				2992712425226EBE00E3063D /* SettingsTableViewController.swift */,
 				29C551CE2526698500025B0A /* ModifyAccountViewController.swift */,
+				296FB0D3252E854A00068115 /* ResetPasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				299C1CDE24F8646700FBC6AD /* UserController.swift in Sources */,
 				2958888724F9907D0078BF5D /* AnimeController.swift in Sources */,
 				293FB74A251E89B200B8A771 /* HomeViewController.swift in Sources */,
+				296FB0D4252E854A00068115 /* ResetPasswordViewController.swift in Sources */,
 				2981207924F5D925002F9F58 /* AuthViewController.swift in Sources */,
 				2981207724F5D624002F9F58 /* WelcomeViewController.swift in Sources */,
 				2958887B24F9777E0078BF5D /* CRError.swift in Sources */,
