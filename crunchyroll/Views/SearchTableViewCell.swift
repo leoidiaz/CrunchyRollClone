@@ -14,6 +14,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var moreInfoButton: UIButton!
+    var animeController = AnimeController()
     //MARK: - Properties
 
     var anime: Anime? {
@@ -28,7 +29,7 @@ class SearchTableViewCell: UITableViewCell {
         titleLabel.text = anime.attributes.canonicalTitle
         typeLabel.text = anime.attributes.subtype
         posterImageView.image = nil
-        AnimeController.getPoster(posterPath: anime.attributes.posterImage.medium) { [weak self] (result) in
+        animeController.getPoster(posterPath: anime.attributes.posterImage.medium) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let poster):
