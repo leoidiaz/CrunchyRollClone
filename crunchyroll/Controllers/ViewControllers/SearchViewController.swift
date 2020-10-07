@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var resultsLabel: UILabel!
     
     var animes = [Anime]()
+    var animeController = AnimeController()
     private let reuseID = "searchedAnime"
     private let segueIdentifier = "detailsFromSearchVC"
     //MARK: - Lifecycle
@@ -28,7 +29,7 @@ class SearchViewController: UIViewController {
     }
     //MARK: - Helper Methods
     private func fetchAnime(anime: String){
-        AnimeController.getAnimes(searchType: .query, query: anime) { [weak self] (result) in
+        animeController.getAnimes(searchType: .query, query: anime) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let animes):

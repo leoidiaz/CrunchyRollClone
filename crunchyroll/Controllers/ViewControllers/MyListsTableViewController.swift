@@ -18,6 +18,7 @@ class MyListsTableViewController: UITableViewController {
     }
     
     //MARK: - Properties
+    var animeController = AnimeController()
     private let reuseIdentifier = "myListCells"
     private let segueIdentifier = "detailsFromMyListVC"
     private let notificationName = "refreshList"
@@ -38,7 +39,7 @@ class MyListsTableViewController: UITableViewController {
         animes.removeAll()
         guard !UserController.shared.mylist.isEmpty else { return }
         for animeURL in UserController.shared.mylist {
-            AnimeController.getMyListAnime(idURL: animeURL) { [weak self] (result) in
+            animeController.getMyListAnime(idURL: animeURL) { [weak self] (result) in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let anime):

@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Properties
+    var animeController = AnimeController()
     private let reuseIdentifier = "homeCells"
     private let coverAnimeIdentifier = "coverAnimeCell"
     private let searchViewIdentifier = "toSearchVC"
@@ -38,7 +39,7 @@ class HomeViewController: UIViewController {
     }
     
     private func fetchAnimes(){
-        AnimeController.getAnimes(searchType: .trending, query: nil){ [weak self] (result) in
+        animeController.getAnimes(searchType: .trending, query: nil){ [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let animes):

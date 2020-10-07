@@ -22,6 +22,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var bookMarkStatusLabel: UILabel!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    var animeController = AnimeController()
     //MARK: - Properties
     var anime: Anime?
     var timer: Timer?
@@ -52,7 +53,7 @@ class DetailsViewController: UIViewController {
     }
     
     private func fetchPoster(anime: Anime){
-        AnimeController.getPoster(posterPath: anime.attributes.posterImage.large) { [weak self] (result) in
+        animeController.getPoster(posterPath: anime.attributes.posterImage.large) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let poster):
