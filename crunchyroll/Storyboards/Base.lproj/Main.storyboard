@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -97,7 +96,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-KR-inv">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-KR-inv">
                                 <rect key="frame" x="28" y="99" width="319" height="48.666666666666657"/>
                                 <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
@@ -105,7 +104,7 @@
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b05-k0-o3Y">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b05-k0-o3Y">
                                 <rect key="frame" x="28" y="157.66666666666666" width="319" height="48.666666666666657"/>
                                 <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
@@ -122,6 +121,9 @@
                                         <state key="normal" title="Forgot Password?">
                                             <color key="titleColor" red="1" green="0.3746894228" blue="0.1007378142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="yNL-KS-ErH" kind="show" id="b6J-dA-mVj"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" | " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpA-Xj-cdB">
                                         <rect key="frame" x="129" y="0.0" width="15.666666666666657" height="33"/>
@@ -206,6 +208,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GbX-KG-RXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-532" y="940"/>
+        </scene>
+        <!--Reset Password View Controller-->
+        <scene sceneID="z2Y-jR-YXk">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="yNL-KS-ErH" customClass="ResetPasswordViewController" customModule="crunchyroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sib-40-vcI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Current Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Or1-q6-6FV">
+                                <rect key="frame" x="28" y="96.333333333333329" width="319" height="44.666666666666671"/>
+                                <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEk-c0-Pmf">
+                                <rect key="frame" x="28" y="188" width="319" height="44.666666666666657"/>
+                                <color key="backgroundColor" red="1" green="0.3746894228" blue="0.1007378142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                <state key="normal" title="RESET PASSWORD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="modifyAccountTapped:" destination="UOO-pi-9bj" eventType="touchUpInside" id="sor-qd-IXn"/>
+                                    <action selector="resetTapped:" destination="yNL-KS-ErH" eventType="touchUpInside" id="ObR-dY-kzr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvL-a7-ab6">
+                                <rect key="frame" x="327" y="49" width="18" height="23.666666666666671"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="yNL-KS-ErH" eventType="touchUpInside" id="9ph-aT-zUl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8P-rc-8HS">
+                                <rect key="frame" x="129.66666666666666" y="50.333333333333336" width="116" height="21.000000000000007"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A link will be sent to your email address to reset your password if your account exists." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTB-94-0ar">
+                                <rect key="frame" x="28" y="145" width="319" height="27.666666666666657"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nrZ-6N-06c"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Or1-q6-6FV" firstAttribute="width" secondItem="Sib-40-vcI" secondAttribute="width" multiplier="0.85" id="6Iw-5X-rxJ"/>
+                            <constraint firstItem="e8P-rc-8HS" firstAttribute="centerX" secondItem="Sib-40-vcI" secondAttribute="centerX" id="7bg-hq-GQj"/>
+                            <constraint firstItem="e8P-rc-8HS" firstAttribute="centerY" secondItem="xvL-a7-ab6" secondAttribute="centerY" id="ANI-a5-Wwf"/>
+                            <constraint firstItem="GEk-c0-Pmf" firstAttribute="width" secondItem="Or1-q6-6FV" secondAttribute="width" id="GDx-6x-N9Q"/>
+                            <constraint firstItem="tTB-94-0ar" firstAttribute="top" secondItem="Or1-q6-6FV" secondAttribute="bottom" constant="4" id="Jfp-gP-2hW"/>
+                            <constraint firstItem="Or1-q6-6FV" firstAttribute="centerX" secondItem="Sib-40-vcI" secondAttribute="centerX" id="K8F-Hz-kHG"/>
+                            <constraint firstItem="GEk-c0-Pmf" firstAttribute="top" secondItem="Or1-q6-6FV" secondAttribute="bottom" constant="47" id="PPd-dh-p3q"/>
+                            <constraint firstItem="nrZ-6N-06c" firstAttribute="trailing" secondItem="xvL-a7-ab6" secondAttribute="trailing" constant="30" id="asW-L5-Cne"/>
+                            <constraint firstItem="Or1-q6-6FV" firstAttribute="height" secondItem="Sib-40-vcI" secondAttribute="height" multiplier="0.055" id="ikF-rR-X5d"/>
+                            <constraint firstItem="GEk-c0-Pmf" firstAttribute="centerX" secondItem="nrZ-6N-06c" secondAttribute="centerX" id="l10-KP-7ek"/>
+                            <constraint firstItem="tTB-94-0ar" firstAttribute="width" secondItem="Or1-q6-6FV" secondAttribute="width" id="lyR-RO-cUk"/>
+                            <constraint firstItem="tTB-94-0ar" firstAttribute="centerX" secondItem="Sib-40-vcI" secondAttribute="centerX" id="q52-yq-Oom"/>
+                            <constraint firstItem="e8P-rc-8HS" firstAttribute="centerY" secondItem="Sib-40-vcI" secondAttribute="centerY" multiplier="0.15" id="qQq-8f-a2s"/>
+                            <constraint firstItem="Or1-q6-6FV" firstAttribute="top" secondItem="e8P-rc-8HS" secondAttribute="bottom" constant="25" id="qpY-x0-x8d"/>
+                            <constraint firstItem="xvL-a7-ab6" firstAttribute="top" secondItem="nrZ-6N-06c" secondAttribute="top" constant="5" id="qwm-ip-7R1"/>
+                            <constraint firstItem="GEk-c0-Pmf" firstAttribute="height" secondItem="Or1-q6-6FV" secondAttribute="height" id="rQS-Hi-Hna"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yd6-01-1KR"/>
+                    <connections>
+                        <outlet property="currentInfo" destination="Or1-q6-6FV" id="e06-D4-hP7"/>
+                        <outlet property="resetPasswordButton" destination="GEk-c0-Pmf" id="c45-lQ-LPx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JAS-jZ-5kY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-532" y="1664.7783251231529"/>
         </scene>
         <!--My Lists-->
         <scene sceneID="puy-mk-Tz3">
@@ -591,7 +673,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNR-Na-oV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3376.8000000000002" y="939.90147783251234"/>
+            <point key="canvasLocation" x="3321" y="797"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="l2q-79-lmX">
@@ -608,12 +690,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-Km-ic6">
-                                        <rect key="frame" x="20" y="40" width="21" height="40"/>
+                                        <rect key="frame" x="20" y="28" width="30" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <connections>
@@ -621,11 +702,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omr-sO-rEO">
-                                        <rect key="frame" x="328.66666666666669" y="45" width="26.333333333333314" height="30"/>
+                                        <rect key="frame" x="325" y="33" width="30" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
-                                            <imageReference key="image" image="arrowshape.turn.up.right" catalog="system" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <connections>
@@ -755,7 +835,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fE-Gv-9rg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3321" y="1694"/>
+            <point key="canvasLocation" x="3321" y="1732"/>
         </scene>
         <!--My Lists-->
         <scene sceneID="NSs-RZ-YEY">
@@ -841,7 +921,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZq-2N-RsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3202" y="2523"/>
+            <point key="canvasLocation" x="4142" y="2528"/>
         </scene>
         <!--Modify Account View Controller-->
         <scene sceneID="GAj-X8-OGs">
@@ -853,6 +933,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Current Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJK-ea-3IM">
                                 <rect key="frame" x="37.666666666666657" y="106.33333333333336" width="300" height="43.666666666666671"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -887,7 +968,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeb-2k-b2p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="2523"/>
+            <point key="canvasLocation" x="5086" y="2528"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wvd-Nv-mfh">
@@ -907,16 +988,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYb-0f-A1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2261.5999999999999" y="2522.6600985221676"/>
+            <point key="canvasLocation" x="2262" y="2528"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VUS-wp-lX1"/>
+        <segue reference="kFt-gd-6Xz"/>
         <segue reference="OOT-8o-QbL"/>
-        <segue reference="4P7-Fw-WRA"/>
+        <segue reference="5Pg-Ft-dod"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
