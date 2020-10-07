@@ -18,6 +18,9 @@
 		2958888524F98C150078BF5D /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958888424F98C150078BF5D /* Anime.swift */; };
 		2958888724F9907D0078BF5D /* AnimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958888624F9907D0078BF5D /* AnimeController.swift */; };
 		29631C282512D10E00146998 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29631C272512D10E00146998 /* SearchViewController.swift */; };
+		296FB0BE252E2F6400068115 /* crunchyrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0BD252E2F6400068115 /* crunchyrollTests.swift */; };
+		296FB0C8252E2FCC00068115 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */; };
+		296FB0CE252E43B000068115 /* AnimeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB0CD252E43B000068115 /* AnimeControllerTests.swift */; };
 		2981205B24F5C4B4002F9F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981205A24F5C4B3002F9F58 /* AppDelegate.swift */; };
 		2981205D24F5C4B4002F9F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981205C24F5C4B4002F9F58 /* SceneDelegate.swift */; };
 		2981206224F5C4B4002F9F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981206024F5C4B4002F9F58 /* Main.storyboard */; };
@@ -35,6 +38,16 @@
 		7F1878F4000189A3B6F5DC27 /* Pods_crunchyroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16DFD249DF37E4531374B9B /* Pods_crunchyroll.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		296FB0C0252E2F6400068115 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2981204F24F5C4B3002F9F58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2981205624F5C4B3002F9F58;
+			remoteInfo = crunchyroll;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		29142D1925157D5000CB795C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		2926F5D225019DED006E13F7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +60,11 @@
 		2958888424F98C150078BF5D /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
 		2958888624F9907D0078BF5D /* AnimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeController.swift; sourceTree = "<group>"; };
 		29631C272512D10E00146998 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		296FB0BB252E2F6400068115 /* crunchyrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crunchyrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		296FB0BD252E2F6400068115 /* crunchyrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crunchyrollTests.swift; sourceTree = "<group>"; };
+		296FB0BF252E2F6400068115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		296FB0CD252E43B000068115 /* AnimeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeControllerTests.swift; sourceTree = "<group>"; };
 		2981205724F5C4B3002F9F58 /* crunchyroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crunchyroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981205A24F5C4B3002F9F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2981205C24F5C4B4002F9F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +87,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		296FB0B8252E2F6400068115 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2981205424F5C4B3002F9F58 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,10 +122,22 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		296FB0BC252E2F6400068115 /* crunchyrollTests */ = {
+			isa = PBXGroup;
+			children = (
+				296FB0BD252E2F6400068115 /* crunchyrollTests.swift */,
+				296FB0BF252E2F6400068115 /* Info.plist */,
+				296FB0C7252E2FCC00068115 /* NetworkServiceTests.swift */,
+				296FB0CD252E43B000068115 /* AnimeControllerTests.swift */,
+			);
+			path = crunchyrollTests;
+			sourceTree = "<group>";
+		};
 		2981204E24F5C4B3002F9F58 = {
 			isa = PBXGroup;
 			children = (
 				2981205924F5C4B3002F9F58 /* crunchyroll */,
+				296FB0BC252E2F6400068115 /* crunchyrollTests */,
 				2981205824F5C4B3002F9F58 /* Products */,
 				1AFCF90286EA718AFC1B0157 /* Pods */,
 				8CD72FFA79E2C9BA46ED3895 /* Frameworks */,
@@ -111,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				2981205724F5C4B3002F9F58 /* crunchyroll.app */,
+				296FB0BB252E2F6400068115 /* crunchyrollTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +261,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		296FB0BA252E2F6400068115 /* crunchyrollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 296FB0C4252E2F6400068115 /* Build configuration list for PBXNativeTarget "crunchyrollTests" */;
+			buildPhases = (
+				296FB0B7252E2F6400068115 /* Sources */,
+				296FB0B8252E2F6400068115 /* Frameworks */,
+				296FB0B9252E2F6400068115 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				296FB0C1252E2F6400068115 /* PBXTargetDependency */,
+			);
+			name = crunchyrollTests;
+			productName = crunchyrollTests;
+			productReference = 296FB0BB252E2F6400068115 /* crunchyrollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2981205624F5C4B3002F9F58 /* crunchyroll */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2981206B24F5C4B5002F9F58 /* Build configuration list for PBXNativeTarget "crunchyroll" */;
@@ -248,10 +304,14 @@
 		2981204F24F5C4B3002F9F58 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Leonardo Diaz";
 				TargetAttributes = {
+					296FB0BA252E2F6400068115 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 2981205624F5C4B3002F9F58;
+					};
 					2981205624F5C4B3002F9F58 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -271,11 +331,19 @@
 			projectRoot = "";
 			targets = (
 				2981205624F5C4B3002F9F58 /* crunchyroll */,
+				296FB0BA252E2F6400068115 /* crunchyrollTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		296FB0B9252E2F6400068115 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2981205524F5C4B3002F9F58 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +400,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		296FB0B7252E2F6400068115 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296FB0C8252E2FCC00068115 /* NetworkServiceTests.swift in Sources */,
+				296FB0CE252E43B000068115 /* AnimeControllerTests.swift in Sources */,
+				296FB0BE252E2F6400068115 /* crunchyrollTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2981205324F5C4B3002F9F58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +440,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		296FB0C1252E2F6400068115 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2981205624F5C4B3002F9F58 /* crunchyroll */;
+			targetProxy = 296FB0C0252E2F6400068115 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		2981206024F5C4B4002F9F58 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -382,6 +468,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		296FB0C2252E2F6400068115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Pods/Firebase/CoreOnly/Sources\"";
+				INFOPLIST_FILE = crunchyrollTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.crunchyrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crunchyroll.app/crunchyroll";
+			};
+			name = Debug;
+		};
+		296FB0C3252E2F6400068115 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Pods/Firebase/CoreOnly/Sources\"";
+				INFOPLIST_FILE = crunchyrollTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.crunchyrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crunchyroll.app/crunchyroll";
+			};
+			name = Release;
+		};
 		2981206924F5C4B5002F9F58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -537,6 +665,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		296FB0C4252E2F6400068115 /* Build configuration list for PBXNativeTarget "crunchyrollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				296FB0C2252E2F6400068115 /* Debug */,
+				296FB0C3252E2F6400068115 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2981205224F5C4B3002F9F58 /* Build configuration list for PBXProject "crunchyroll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
