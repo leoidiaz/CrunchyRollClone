@@ -44,3 +44,19 @@ func addPaddingAndBorder(to textfield: UITextField) {
     textfield.leftView = leftView
     textfield.leftViewMode = .always
 }
+
+
+extension UITextField {
+    func setBottomBorder() {
+        borderStyle = .none
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.systemYellow.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        layer.shadowOpacity = 1.0
+        layer.shadowRadius = 0.0
+    }
+    func removeBottomBorder() {
+        layer.shadowColor = .none
+        layer.shadowOffset = .zero
+    }
+}
