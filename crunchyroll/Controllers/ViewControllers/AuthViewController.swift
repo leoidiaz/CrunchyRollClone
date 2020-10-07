@@ -127,19 +127,18 @@ extension AuthViewController: UITextFieldDelegate {
             passwordTextField.setBottomBorder()
         }
     }
-}
-
-extension UITextField {
-    func setBottomBorder() {
-        borderStyle = .none
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.systemYellow.cgColor
-        layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
-        layer.shadowOpacity = 1.0
-        layer.shadowRadius = 0.0
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        textField.removeBottomBorder()
+        return true
     }
-    func removeBottomBorder() {
-        layer.shadowColor = .none
-        layer.shadowOffset = .zero
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailTextField.endEditing(true)
+        emailTextField.removeBottomBorder()
+        passwordTextField.endEditing(true)
+        passwordTextField.removeBottomBorder()
     }
+    
 }
