@@ -12,8 +12,6 @@ import Firebase
 class DetailsViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -66,7 +64,7 @@ class DetailsViewController: UIViewController {
     }
     
     private func style(){
-        topBarView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        topBarView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
         topBarView.layer.mask = createGradient(frame: topBarView.bounds)
         posterImageView.layer.mask = createGradient(frame: posterImageView.bounds)
         bookmarkButton.layer.borderColor = #colorLiteral(red: 1, green: 0.4199070632, blue: 0.1084215119, alpha: 1)
