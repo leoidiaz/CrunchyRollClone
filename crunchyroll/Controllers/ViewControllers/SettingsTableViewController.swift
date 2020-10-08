@@ -18,13 +18,13 @@ class SettingsTableViewController: UITableViewController {
     //MARK: - Properties
     var settings = Settings.defaultSetings
     var logout:IndexPath = [1, 0]
+    var deleteAccount: IndexPath = [1, 1]
     private let segueIdentifier = "settingsCell"
     
     
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return settings.count
     }
 
@@ -56,6 +56,9 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath)
         cell.textLabel?.text = settings[indexPath.section][indexPath.row]
+        if indexPath == deleteAccount {
+            cell.textLabel?.textColor = .red
+        }
         cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.forward"))
         return cell
     }
@@ -64,16 +67,20 @@ class SettingsTableViewController: UITableViewController {
         if indexPath == logout {
             do {
                 try Auth.auth().signOut()
-                showLogin()                
+                showLogin()
             } catch {
                 presentErrorToUser(title: "Unable to signout", localizedError: .thrownError(error))
             }
         }
+        if indexPath == deleteAccount {
+            showAlert()
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     //MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if tableView.indexPathForSelectedRow == logout { return false }
+        if tableView.indexPathForSelectedRow == logout || tableView.indexPathForSelectedRow == deleteAccount { return false }
         return true
     }
     
@@ -85,5 +92,20 @@ class SettingsTableViewController: UITableViewController {
                 window.rootViewController = welcomeViewController
             }
         }
+    }
+    private func showAlert(){
+        let alertController = UIAlertController(title: "Are you sure?", message: "All your saved animes will be deleted.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+            UserController.shared.deleteUser { [weak self] (result) in
+                switch result {
+                case .success(_):
+                    self?.showLogin()
+                case .failure(let error):
+                    self?.presentErrorToUser(title: "Unable to delete user", localizedError: .thrownError(error))
+                }
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alertController, animated: true)
     }
 }
