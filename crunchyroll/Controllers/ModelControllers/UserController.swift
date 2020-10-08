@@ -67,4 +67,27 @@ class UserController {
         myList.updateData([UserKeys.myLists : FieldValue.arrayRemove([animeID])])
         if let index = mylist.firstIndex(of: animeID){mylist.remove(at: index)}
     }
+    
+    func deleteUser(completion: @escaping (Result<Bool, CRError>) -> Void) {
+        guard let user = Auth.auth().currentUser, let userEmail = user.email else { fatalError("Could not fetch current user")}
+        deleteDocuments(user: user, userEmail: userEmail, completion: completion)
+    }
+    
+    func deleteDocuments(user: FirebaseAuth.User, userEmail: String, completion: @escaping (Result<Bool, CRError>) -> Void){
+        db.collection(UserKeys.documentKey).document(userEmail).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+                completion(.failure(.thrownError(err)))
+            } else {
+                user.delete { error in
+                  if let error = error {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    completion(.failure(.thrownError(error)))
+                  } else {
+                    completion(.success(true))
+                  }
+                }
+            }
+        }
+    }
 }
