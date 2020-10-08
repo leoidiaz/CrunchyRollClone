@@ -110,7 +110,7 @@
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1lJ-Dp-rth">
                                 <rect key="frame" x="57.333333333333343" y="312.33333333333331" width="260.66666666666663" height="33"/>
@@ -690,10 +690,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-Km-ic6">
-                                        <rect key="frame" x="20" y="28" width="30" height="52"/>
+                                        <rect key="frame" x="20" y="40" width="17.333333333333329" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal">
+                                        <state key="normal" image="xmark" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
@@ -702,10 +702,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omr-sO-rEO">
-                                        <rect key="frame" x="325" y="33" width="30" height="42"/>
+                                        <rect key="frame" x="333.66666666666669" y="45" width="21.333333333333314" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal">
+                                        <state key="normal" image="arrowshape.turn.up.right" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <connections>
@@ -824,10 +824,8 @@
                         <outlet property="bookmarkButton" destination="fEr-8L-J6u" id="ZsO-v4-bhg"/>
                         <outlet property="bottomConstraint" destination="JZq-S4-kl6" id="ccQ-EQ-JZb"/>
                         <outlet property="bottomView" destination="TeI-GD-1ry" id="F8C-0T-gav"/>
-                        <outlet property="closeButton" destination="aJY-Km-ic6" id="1A4-qU-Bkh"/>
                         <outlet property="descriptionLabel" destination="Sox-yl-zCQ" id="F4f-fl-GoE"/>
                         <outlet property="posterImageView" destination="LQX-0y-sOC" id="sAY-JG-C8a"/>
-                        <outlet property="shareButton" destination="Omr-sO-rEO" id="LgD-yc-iP8"/>
                         <outlet property="subTypeLabel" destination="wWC-IM-O1d" id="uQr-DK-mde"/>
                         <outlet property="titleLabel" destination="DgE-Ye-0jj" id="rhE-p1-9Ac"/>
                         <outlet property="topBarView" destination="ykK-HN-ShC" id="R6l-BP-NgZ"/>
@@ -997,6 +995,7 @@
         <segue reference="5Pg-Ft-dod"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
