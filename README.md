@@ -3,13 +3,13 @@
 ### A fullstack iOS app clone based off the [Crunchyroll](https://apps.apple.com/us/app/crunchyroll/id329913454?itsct=apps_box&itscg=30200) app
 #### Built using UIKit, Firebase, and [Kitsu API Docs](https://kitsu.docs.apiary.io/#reference/anime/episodes/fetch-collection)
 
-* Xcode 12 and Swift 5.3
+* Xcode 12 and Swift 5
 * Cocoapods Version 1.10
 * FirebaseFirestore (>= 1.6.1, ~> 1.6)
 
 Purpose of this app was to have more practice with Firebase, Networking with an API, and re-creating professional level user interfaces.
 
-Sign in authenication with Firestore and add watchlist animes that are saved onto Firestore.
+Sign in authentication with Firestore and add animes to a watchlist that is stored onto Firestore.
 
 <h2 align= "center"> Welcome Screen</h2>
 <p align= "center">
